@@ -5,6 +5,10 @@ alias ltr='ls -ltr'
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias finder-hidden='defaults write com.apple.finder AppleShowAllFiles YES'
+alias finder-hidden-off='defaults write com.apple.finder AppleShowAllFiles NO'
+alias finder-hidden-no='defaults write com.apple.finder AppleShowAllFiles NO'
+
 alias grep='grep --color=auto'
 
 alias e=$EDITOR
@@ -33,10 +37,8 @@ alias ga='git add'
 alias gb='git rev-parse --abbrev-ref @'
 alias gc='ga . --all && git commit -m'
 alias gd='git di'
-alias gdc='git di --cached'
-alias gds='git di --staged'
-# отличие текущего бранча от точки начала
-alias gdb='gd `git rev-list --boundary $(gb)...develop | grep ^- | cut -c2-`..`gb`'
+alias gds='gd --staged'
+alias gdpr='gd --name-status `git merge-base ${1:=origin/master} HEAD`..HEAD'
 alias gf='git fetch --prune'
 alias gh='git hist'
 alias gl='git lol'
@@ -48,5 +50,15 @@ alias gt='git tag'
 alias gst='git status -sb'
 
 alias vim='/usr/local/Cellar/vim/7.4.898/bin/vim'
-alias vimd='vim `gd --name-only | xargs ls 2>/dev/null`'
-alias vims='vim `gds --name-only | xargs ls 2>/dev/null`'
+vimD() {
+    vim `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+}
+vimS() {
+    vim `gds --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+}
+vimPr() {
+    vim `gdpr | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+}
+alias vimd=vimD
+alias vims=vimS
+alias vimpr=vimPr
