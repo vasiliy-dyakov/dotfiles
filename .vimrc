@@ -209,7 +209,7 @@ let g:solarized_termcolors=256
 let g:solarized_contrast='high'
 let g:solarized_termtrans=1
 
-set background=light
+" set background=dark
 colorscheme solarized
 
 " Unite
@@ -247,6 +247,7 @@ endif
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=0
 nmap <silent> <leader>t :NERDTreeToggle<CR>
+nmap <silent> <leader>f :NERDTreeToggle<CR>
 nmap <silent> <C-f> :NERDTreeFind<CR>
 
 " fugitive
