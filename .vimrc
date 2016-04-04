@@ -247,7 +247,7 @@ endif
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=0
 nmap <silent> <leader>t :NERDTreeToggle<CR>
-nmap <silent> <leader>f :NERDTreeToggle<CR>
+nmap <silent> <leader>f :NERDTreeFind<CR>
 nmap <silent> <C-f> :NERDTreeFind<CR>
 
 " fugitive
