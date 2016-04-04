@@ -5,10 +5,6 @@ alias ltr='ls -ltr'
 alias ..='cd ..'
 alias ...='cd ../..'
 
-alias finder-hidden='defaults write com.apple.finder AppleShowAllFiles YES'
-alias finder-hidden-off='defaults write com.apple.finder AppleShowAllFiles NO'
-alias finder-hidden-no='defaults write com.apple.finder AppleShowAllFiles NO'
-
 alias grep='grep --color=auto'
 
 alias e=$EDITOR
@@ -37,8 +33,11 @@ alias ga='git add'
 alias gb='git rev-parse --abbrev-ref @'
 alias gc='ga . --all && git commit -m'
 alias gd='git di'
-alias gds='gd --staged'
-alias gdpr='gd --name-status `git merge-base ${1:=origin/master} HEAD`..HEAD'
+alias gdc='git di --cached'
+alias gds='git di --staged'
+alias gdpr='gd `git merge-base ${1:-origin/develop} HEAD`..HEAD'
+# отличие текущего бранча от точки начала
+alias gdb='gd `git rev-list --boundary $(gb)...develop | grep ^- | cut -c2-`..`gb`'
 alias gf='git fetch --prune'
 alias gh='git hist'
 alias gl='git lol'
@@ -47,17 +46,27 @@ alias gp='git pull --rebase'
 alias gr='git remote -v'
 alias gs='git st'
 alias gt='git tag'
-alias gst='git status -sb'
+alias gst='git stash'
+alias gsts='git stash save'
+stashApply() {
+    git stash apply stash@{$1}
+}
+alias gsta=stashApply
+stashPop() {
+    git stash pop stash@{$1}
+}
+alias gstp=stashPop
+alias gstl='git stash list'
 
 alias vim='/usr/local/Cellar/vim/7.4.898/bin/vim'
 vimD() {
-    vim `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+    vim -p `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
 }
 vimS() {
-    vim `gds --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+    vim -p `gds --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
 }
 vimPr() {
-    vim `gdpr | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+    vim -p `gdpr --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
 }
 alias vimd=vimD
 alias vims=vimS
