@@ -112,7 +112,7 @@ set nobackup
 set nowritebackup
 set noswapfile
 set binary
-set noeol
+set eol
 set suffixesadd=.js         " to open files without extension (es6 modules, requirejs, etc)
 
 " Tab options
@@ -229,7 +229,6 @@ nmap <space> [unite]
 nnoremap [unite] <nop>
 
 nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
-nnoremap <silent> [unite]m :<C-u>Unite -auto-resize -buffer-name=mappings mapping<cr>
 
 if executable('ag')
     let g:unite_source_grep_command='ag'
@@ -248,11 +247,11 @@ let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=0
 nmap <silent> <leader>t :NERDTreeToggle<CR>
 nmap <silent> <leader>f :NERDTreeFind<CR>
-nmap <silent> <C-f> :NERDTreeFind<CR>
+nmap <silent> <space><space> :NERDTreeFind<CR>
+nmap <silent> <space>c :NERDTreeClose<CR>
 
 " fugitive
-nmap <silent> <leader>b :.Gblame<cr>
-vmap <silent> <leader>b :Gblame<cr>
+nmap <silent> <space>a :.Gblame<cr>
 " delimitMate
 let delimitMate_matchpairs = '(:),[:],{:}'
 let delimitMate_expand_space = 1
@@ -339,13 +338,35 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
-nnoremap <silent> <C-t> :tabnew<cr>
-nnoremap <silent> <C-x> :q<cr>
-nnoremap <silent> <C-s> :w<cr>
-nnoremap <silent> <C-d> :Gdiff<cr>
-nnoremap <silent> <C-1> :diffget<cr>
-nnoremap <silent> <C-2> :diffget //2<cr>
-nnoremap <silent> <C-3> :diffget //3<cr>
+nnoremap <silent> <space>t :tabnew<cr>
+nnoremap <silent> <space>w :q<cr>
+nnoremap <space>f :Ag<space>
+nnoremap <silent> <space>o :CtrlP<cr>
+nnoremap <silent> <space>d :Gdiff<cr>
+nnoremap <silent> <space>g :diffget<cr>
+nnoremap <silent> <space>p :diffput<cr>
+nnoremap <silent> <space>2 :diffget //2<cr>
+nnoremap <silent> <space>3 :diffget //3<cr>
+nnoremap <silent> <space>v :vsp<cr>
+nnoremap <silent> <space>j <C-f>
+nnoremap <silent> <space>k <C-b>
+nnoremap <silent> <space>h <C-w>h
+nnoremap <silent> <space>l <C-w>l
+nnoremap <silent> <space>n <C-w>w
+nnoremap <silent> <space><cr> :b#<cr>
+nnoremap <silent> U :redo<cr>
+nnoremap <silent> g1 1gt
+nnoremap <silent> g2 2gt
+nnoremap <silent> g3 3gt
+nnoremap <silent> g4 4gt
+nnoremap <silent> g4 4gt
+nnoremap <silent> g5 5gt
+nnoremap <silent> g6 6gt
+nnoremap <silent> g7 7gt
+nnoremap <silent> g8 8gt
+nnoremap <silent> g9 9gt
+nnoremap <silent> g0 :tablast<cr>
+nnoremap <silent> <space><tab> zaVza
 
 "CtrlP
 if executable('ag')
