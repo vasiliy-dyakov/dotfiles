@@ -354,7 +354,6 @@ nnoremap <silent> <space>h <C-w>h
 nnoremap <silent> <space>l <C-w>l
 nnoremap <silent> <space>n <C-w>w
 nnoremap <silent> <space><cr> :b#<cr>
-nnoremap <silent> U :redo<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
