@@ -7,6 +7,7 @@ done
 unset file
 
 source ~/git-completion.bash
+source ~/git-prompt.sh
 
 if [ -f /usr/local/etc/bash_completion ]; then
     . /usr/local/etc/bash_completion
