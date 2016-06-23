@@ -139,11 +139,9 @@ set matchpairs+=<:>         " Make < and > match as well
 
 " Localization
 set langmenu=none            " Always use english menu
-set keymap=russian-jcukenwin " Alternative keymap
-highlight lCursor guifg=NONE guibg=Cyan
+set keymap=russian-jcukenmac " Alternative keymap
 set iminsert=0               " English by default
 set imsearch=-1              " Search keymap from insert mode
-set spelllang=en,ru          " Languages
 " set spell
 set encoding=utf-8           " Default encoding
 set fileencodings=utf-8,cp1251,koi8-r,cp866
@@ -209,7 +207,7 @@ let g:solarized_termcolors=256
 let g:solarized_contrast='high'
 let g:solarized_termtrans=1
 
-" set background=dark
+set background=light
 colorscheme solarized
 
 " Unite
@@ -366,6 +364,7 @@ nnoremap <silent> g7 8gt
 nnoremap <silent> g8 9gt
 nnoremap <silent> g$ :tablast<cr>
 nnoremap <silent> <space><tab> zaVza
+nnoremap <silent> <space>s :setlocal spell spelllang=ru_ru,en_us<cr>
 
 " work with system buffer
 vmap <space>y "+y
