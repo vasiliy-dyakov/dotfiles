@@ -73,6 +73,7 @@ NeoBundleCheck
 syntax on
 
 set mouse=a
+let mapleader = "\<space>"
 
 " General options
 set exrc secure             " Enable per-directory .vimrc files and disable unsafe commands in them
@@ -106,7 +107,6 @@ set wrap
 " Edit
 set backspace=indent,eol,start " Allow backspace to remove indents, newlines and old tex"
 " set virtualedit=block
-set pastetoggle=<leader>p
 set iskeyword+=-
 set nobackup
 set nowritebackup
@@ -168,7 +168,6 @@ augroup vimrc
   autocmd FileType vim setlocal sw=2
   autocmd FileType vim setlocal ts=2
   autocmd FileType vim setlocal sts=2
-  autocmd FileType vim nnoremap <leader>x 0y$:<c-r>"<cr>
 
   " Auto reload vim settings
   autocmd BufWritePost *.vim source $MYVIMRC
@@ -186,8 +185,6 @@ augroup vimrc
   autocmd BufRead,BufNewFile *.json set ft=javascript
   " autocmd BufRead,BufNewFile *.json set equalprg=python\ -mjson.tool
   autocmd BufRead,BufNewFile *.js set ft=javascript.javascript-jquery
-
-  autocmd BufRead,BufNewFile *.html nmap <leader>o :!open %<cr>
 
   " Avoid syntax-highlighting for files larger than 10MB
   autocmd BufReadPre * if getfsize(expand("%")) > 10000*1024 | syntax off | endif
@@ -223,7 +220,7 @@ let g:unite_source_buffer_time_format = ''
 " let g:unite_winheight = 10
 " let g:unite_candidate_icon="▷"
 
-nmap <space> [unite]
+nmap <leader> [unite]
 nnoremap [unite] <nop>
 
 nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
@@ -243,13 +240,11 @@ endif
 " NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=0
-nmap <silent> <leader>t :NERDTreeToggle<CR>
-nmap <silent> <leader>f :NERDTreeFind<CR>
-nmap <silent> <space><space> :NERDTreeFind<CR>
-nmap <silent> <space>c :NERDTreeClose<CR>
+nmap <silent> <leader><space> :NERDTreeFind<CR>
+nmap <silent> <leader>c :NERDTreeClose<CR>
 
 " fugitive
-nmap <silent> <space>a :.Gblame<cr>
+nmap <silent> <leader>a :.Gblame<cr>
 " delimitMate
 let delimitMate_matchpairs = '(:),[:],{:}'
 let delimitMate_expand_space = 1
@@ -336,20 +331,20 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
-nnoremap <silent> <space>t :tabnew<cr>
-nnoremap <silent> <space>x :close<cr>
-nnoremap <silent> <space>q :tabclose<cr>
-nnoremap <space>f :Ag<space>
-nnoremap <silent> <space>o :CtrlP<cr>
-nnoremap <silent> <space>d :Gdiff<cr>
-nnoremap <silent> <space>n :noh<cr>
-nnoremap <silent> <space>g :diffget<cr>
-nnoremap <silent> <space>dp :diffput<cr>
-nnoremap <silent> <space>2 :diffget //2<cr>
-nnoremap <silent> <space>3 :diffget //3<cr>
-nnoremap <silent> <space>v :vsp<cr>
-nnoremap <silent> <space>w :w<cr>
-nnoremap <silent> <space><cr> :b#<cr>
+nnoremap <silent> <leader>t :tabnew<cr>
+nnoremap <silent> <leader>x :close<cr>
+nnoremap <silent> <leader>q :tabclose<cr>
+nnoremap <leader>f :Ag<space>
+nnoremap <silent> <leader>o :CtrlP<cr>
+nnoremap <silent> <leader>d :Gdiff<cr>
+nnoremap <silent> <leader>n :noh<cr>
+nnoremap <silent> <leader>g :diffget<cr>
+nnoremap <silent> <leader>dp :diffput<cr>
+nnoremap <silent> <leader>2 :diffget //2<cr>
+nnoremap <silent> <leader>3 :diffget //3<cr>
+nnoremap <silent> <leader>v :vsp<cr>
+nnoremap <silent> <leader>w :w<cr>
+nnoremap <silent> <leader><cr> :b#<cr>
 nnoremap <silent> g0 1gt
 nnoremap <silent> g1 2gt
 nnoremap <silent> g2 3gt
@@ -361,16 +356,16 @@ nnoremap <silent> g6 7gt
 nnoremap <silent> g7 8gt
 nnoremap <silent> g8 9gt
 nnoremap <silent> g$ :tablast<cr>
-nnoremap <silent> <space><tab> zaVza
-" nnoremap <silent> <space>s :setlocal spell spelllang=ru_ru,en_us<cr>
-nnoremap <silent> <space>s :SyntasticToggleMode<cr>
+nnoremap <silent> <leader><tab> zaVza
+" nnoremap <silent> <leader>s :setlocal spell spelllang=ru_ru,en_us<cr>
+nnoremap <silent> <leader>s :SyntasticToggleMode<cr>
 
 " work with system buffer
-vmap <space>y "+y
-nmap <space>p "+p
-nmap <space>P "+P
-vmap <space>p "+p
-vmap <space>P "+P
+vmap <leader>y "+y
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
 
 "CtrlP
 if executable('ag')
