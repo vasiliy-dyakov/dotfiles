@@ -337,20 +337,18 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 nnoremap <silent> <space>t :tabnew<cr>
-nnoremap <silent> <space>x :q<cr>
+nnoremap <silent> <space>x :close<cr>
+nnoremap <silent> <space>q :tabclose<cr>
 nnoremap <space>f :Ag<space>
 nnoremap <silent> <space>o :CtrlP<cr>
 nnoremap <silent> <space>d :Gdiff<cr>
+nnoremap <silent> <space>n :noh<cr>
 nnoremap <silent> <space>g :diffget<cr>
 nnoremap <silent> <space>dp :diffput<cr>
 nnoremap <silent> <space>2 :diffget //2<cr>
 nnoremap <silent> <space>3 :diffget //3<cr>
 nnoremap <silent> <space>v :vsp<cr>
-nnoremap <silent> <space>j <C-f>
-nnoremap <silent> <space>k <C-b>
-nnoremap <silent> <space>h <C-w>h
-nnoremap <silent> <space>l <C-w>l
-nnoremap <silent> <space>n <C-w>w
+nnoremap <silent> <space>w :w<cr>
 nnoremap <silent> <space><cr> :b#<cr>
 nnoremap <silent> g0 1gt
 nnoremap <silent> g1 2gt
@@ -364,7 +362,8 @@ nnoremap <silent> g7 8gt
 nnoremap <silent> g8 9gt
 nnoremap <silent> g$ :tablast<cr>
 nnoremap <silent> <space><tab> zaVza
-nnoremap <silent> <space>s :setlocal spell spelllang=ru_ru,en_us<cr>
+" nnoremap <silent> <space>s :setlocal spell spelllang=ru_ru,en_us<cr>
+nnoremap <silent> <space>s :SyntasticToggleMode<cr>
 
 " work with system buffer
 vmap <space>y "+y
