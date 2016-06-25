@@ -58,7 +58,6 @@ stashPop() {
 alias gstp=stashPop
 alias gstl='git stash list'
 
-alias vim='/usr/local/Cellar/vim/7.4.898/bin/vim'
 vimD() {
     vim -p `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
 }
