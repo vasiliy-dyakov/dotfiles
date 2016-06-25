@@ -39,6 +39,8 @@ NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
             \ 'autoload':{'commands':'Gitv'}}
 NeoBundle 'airblade/vim-gitgutter'
 
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-lastpat'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -193,9 +195,9 @@ augroup vimrc
 
   " NeoComplete, Neosnippet
   " Auto close preview window
-  autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
-  autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-  autocmd InsertLeave * NeoSnippetClearMarkers
+  " autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+  " autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+  " autocmd InsertLeave * NeoSnippetClearMarkers
 
 augroup END
 
@@ -334,10 +336,10 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 nnoremap <silent> <leader>t :tabnew<cr>
 nnoremap <silent> <leader>x :close<cr>
 nnoremap <silent> <leader>q :tabclose<cr>
-nnoremap <leader>f :Ag<space>
+nnoremap <leader>f mM:Ag<space>
 nnoremap <silent> <leader>o :CtrlP<cr>
 nnoremap <silent> <leader>d :Gdiff<cr>
-nnoremap <silent> <leader>n :noh<cr>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap <silent> <leader>g :diffget<cr>
 nnoremap <silent> <leader>dp :diffput<cr>
 nnoremap <silent> <leader>2 :diffget //2<cr>
@@ -345,6 +347,7 @@ nnoremap <silent> <leader>3 :diffget //3<cr>
 nnoremap <silent> <leader>v :vsp<cr>
 nnoremap <silent> <leader>w :w<cr>
 nnoremap <silent> <leader><cr> :b#<cr>
+nnoremap <silent> <leader>* :%s///gn<cr> "count of matches
 nnoremap <silent> g0 1gt
 nnoremap <silent> g1 2gt
 nnoremap <silent> g2 3gt
@@ -366,6 +369,19 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
+
+"Search visual selection by *
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+nnoremap <silent> <leader>/ :<C-u>call <SID>SetSearch()<CR>/<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+    let temp = @s
+    norm! gv"sy
+    let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+    let @s = temp
+endfunction
+function! s:SetSearch()
+    let @/ = '\V' . substitute(escape(@+, '/\'), '\n', '\\n', 'g')
+endfunction
 
 "CtrlP
 if executable('ag')
