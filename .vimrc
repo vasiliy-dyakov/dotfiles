@@ -44,6 +44,7 @@ NeoBundle 'kana/vim-textobj-lastpat' "a/ i/ highlighted text
 NeoBundle 'kana/vim-textobj-fold' "az folding
 NeoBundle 'kana/vim-textobj-entire' "ae ie current buffer
 NeoBundle 'glts/vim-textobj-comment' "ac current comment
+NeoBundle 'tpope/vim-abolish' ":%S/{dog,man}/{man,dog}
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
