@@ -40,7 +40,10 @@ NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
 NeoBundle 'airblade/vim-gitgutter'
 
 NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kana/vim-textobj-lastpat'
+NeoBundle 'kana/vim-textobj-lastpat' "a/ i/ highlighted text
+NeoBundle 'kana/vim-textobj-fold' "az folding
+NeoBundle 'kana/vim-textobj-entire' "ae ie current buffer
+NeoBundle 'glts/vim-textobj-comment' "ac current comment
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -347,7 +350,6 @@ nnoremap <silent> <leader>3 :diffget //3<cr>
 nnoremap <silent> <leader>v :vsp<cr>
 nnoremap <silent> <leader>w :w<cr>
 nnoremap <silent> <leader><cr> :b#<cr>
-nnoremap <silent> <leader>* :%s///gn<cr> "count of matches
 nnoremap <silent> g0 1gt
 nnoremap <silent> g1 2gt
 nnoremap <silent> g2 3gt
@@ -359,7 +361,6 @@ nnoremap <silent> g6 7gt
 nnoremap <silent> g7 8gt
 nnoremap <silent> g8 9gt
 nnoremap <silent> g$ :tablast<cr>
-nnoremap <silent> <leader><tab> zaVza
 " nnoremap <silent> <leader>s :setlocal spell spelllang=ru_ru,en_us<cr>
 nnoremap <silent> <leader>s :SyntasticToggleMode<cr>
 
