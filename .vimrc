@@ -351,6 +351,7 @@ nnoremap <silent> <leader>3 :diffget //3<cr>
 nnoremap <silent> <leader>v :vsp<cr>
 nnoremap <silent> <leader>w :w<cr>
 nnoremap <silent> <leader><cr> :b#<cr>
+nnoremap <silent> <leader>r :%s//<c-r><c-w><cr>
 nnoremap <silent> g0 1gt
 nnoremap <silent> g1 2gt
 nnoremap <silent> g2 3gt
