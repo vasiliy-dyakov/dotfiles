@@ -39,6 +39,9 @@ NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
             \ 'autoload':{'commands':'Gitv'}}
 NeoBundle 'airblade/vim-gitgutter'
 
+" snippets
+NeoBundle 'sirver/ultisnips'
+
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-lastpat' "a/ i/ highlighted text
 NeoBundle 'kana/vim-textobj-fold' "az folding
@@ -397,7 +400,7 @@ if executable('ag')
 endif
 
 " Helpers for snipmate
-so ~/.vim/snippets/support_functions.vim
+" so ~/.vim/snippets/support_functions.vim
 
 " Slime-vim
 " Typical settings for tmux:
@@ -422,3 +425,10 @@ endif
 function! SQLUpperCase()
     %s:\<analyze\>\|\<and\>\|\<as\>\|\<by\>\|\<desc\>\|\<exists\>\|\<explain\>\|\<from\>\|\<group\>\|\<in\>\|\<insert\>\|\<intersect\>\|\<into\>\|\<join\>\|\<limit\>\|\<not\>\|\<on\>\|\<order\>\|\<select\>\|\<set\>\|\<update\>\|\<where\>:\U&:i
 endfunction
+
+"ultiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-k>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsEditSplit="vertical"

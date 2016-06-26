@@ -1,0 +1,182 @@
+snippet ir
+import React, { PropTypes as pt, Component } from 'react';
+endsnippet
+
+snippet i
+import $1 from '$2';
+endsnippet
+
+snippet cr
+class $1 extends Component {
+    $2
+}
+
+export default $1;
+endsnippet
+
+snippet CR
+class $1 extends Component {
+    static contextTypes = {
+        executeAction: pt.func.isRequired,
+        getStore: pt.func.isRequired
+    };
+
+    static propTypes = {
+        children: pt.func.isRequired
+    };
+
+    componentWillMount() {
+        $2
+    }
+
+    render() {
+        $3
+    }
+}
+
+export default $1;
+endsnippet
+
+snippet ct
+static contextTypes = {
+    $1
+};
+endsnippet
+
+snippet pt
+static propTypes = {
+    $1
+};
+endsnippet
+
+snippet dp
+static defaultProps = {
+    $1
+};
+endsnippet
+
+snippet exA
+executeAction: pt.func.isRequired
+endsnippet
+
+snippet geS
+getStore: pt.func.isRequired
+endsnippet
+
+snippet m
+$1($2) {
+    $3
+}
+endsnippet
+
+snippet m=>
+$1 = ($2) => {
+    $3
+};
+endsnippet
+
+snippet =>
+$1 => {
+    $2
+}
+endsnippet
+
+snippet b
+{
+    $2
+}
+endsnippet
+
+snippet if
+if ($1) {
+    $2
+}
+endsnippet
+
+snippet else
+else {
+    $1
+}
+endsnippet
+
+snippet cWM
+componentWillMount() {
+    $1
+}
+endsnippet
+
+snippet cDM
+componentDidMount() {
+    $1
+}
+endsnippet
+
+snippet cWRP
+componentWillReceiveProps(nextProps) {
+    $1
+}
+endsnippet
+
+snippet sCU
+shouldComponentUpdate() {
+    $1
+}
+endsnippet
+
+snippet cWU
+componentWillUpdate(nextProps, nextState) {
+    $1
+}
+endsnippet
+
+snippet cDU
+componentDidUpdate() {
+    $1
+}
+endsnippet
+
+snippet cWUm
+componentWillUnmount() {
+    $1
+}
+endsnippet
+
+snippet gSS
+getStoresState() {
+    $1
+}
+endsnippet
+
+snippet sS
+this.setState({
+    $1
+});
+endsnippet
+
+snippet todo
+// TODO: $1 (@v.dyakov, `date +%d.%m.%y`)
+endsnippet
+
+snippet t
+<${1:div}>
+    $2
+</$1>
+endsnippet
+
+snippet T
+<${1}
+    $2
+>
+    $3
+</$1>
+endsnippet
+
+snippet t/
+<${1:div}/>
+endsnippet
+
+snippet T/
+<${1}
+    $2
+/>
+endsnippet
