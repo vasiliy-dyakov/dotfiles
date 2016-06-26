@@ -6,6 +6,14 @@ snippet i
 import $1 from '$2';
 endsnippet
 
+snippet c
+class $1 extends $2{
+    $3
+}
+
+export default $1;
+endsnippet
+
 snippet cr
 class $1 extends Component {
     $2
@@ -154,7 +162,7 @@ this.setState({
 endsnippet
 
 snippet todo
-// TODO: $1 (@v.dyakov, `date +%d.%m.%y`)
+// TODO: ${1:desc} (`echo $(git config user.email)`, `date +%d.%m.%y`)
 endsnippet
 
 snippet t
