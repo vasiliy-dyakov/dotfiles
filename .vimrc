@@ -346,6 +346,8 @@ nnoremap <silent> <leader>x :close<cr>
 nnoremap <silent> <leader>q :tabclose<cr>
 nnoremap <leader>f mM:Ag<space>
 nnoremap <silent> <leader>o :CtrlP<cr>
+nnoremap <leader>b (Odebugger;<c-[>:w<cr>
+nnoremap <silent> <leader>u u:w<cr>
 nnoremap <silent> <leader>d :Gdiff<cr>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap <silent> <leader>g :diffget<cr>
