@@ -13,7 +13,7 @@ export NODE_PATH=./node_modules:$NODE_PATH
 
 export LANG=ru_RU.UTF-8
 export PS1='\[\033[0;31m\][\w]\[\033[01;35m\]$(__git_ps1 " (%s)")\[\033[0m\] › '
-/* export PS1='$PURPLE\[\w\]$MAGENTA$(__git_ps1 " (%s)")$RESET › $RESET' */
+# export PS1='$PURPLE\[\w\]$MAGENTA$(__git_ps1 " (%s)")$RESET › $RESET'
 export LC_ALL=ru_RU.UTF-8
 export BLOCKSIZE=K      # FreeBSD only
 export EDITOR=vim
