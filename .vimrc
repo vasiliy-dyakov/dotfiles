@@ -171,6 +171,9 @@ set diffopt=filler
 set diffopt+=vertical
 set diffopt+=iwhite
 
+set laststatus=2
+set statusline+=%F
+
 augroup vimrc
   autocmd!
 
