@@ -91,6 +91,10 @@ set exrc secure             " Enable per-directory .vimrc files and disable unsa
 set hidden                  " hide buffers when they are abandoned
 set autoread                " auto reload changed files
 
+" reloads all buffers on switching between windows, tabs, and cursor move
+au FocusGained,BufEnter,CursorMoved * :silent! checktime
+" au FocusLost,WinLeave,CursorHold * :silent! w
+
 " Display options
 set title                   " show file name in window title
 set novisualbell            " mute error bell
@@ -172,7 +176,7 @@ set diffopt+=vertical
 set diffopt+=iwhite
 
 set laststatus=2
-set statusline+=%F
+set statusline=%F
 
 augroup vimrc
   autocmd!
@@ -347,37 +351,35 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 nnoremap <silent> <leader>t :tabnew<cr>
 nnoremap <silent> <leader>x :close<cr>
 nnoremap <silent> <leader>q :tabclose<cr>
+" reload if changed
+nnoremap <silent> <leader>r :checktime<cr>
 nnoremap <leader>f mM:Ag<space>
 nnoremap <silent> <leader>o :CtrlP<cr>
-nnoremap <leader>d (Odebugger;<c-[>:w<cr>
-nnoremap <silent> <leader>u u:w<cr>
-"git diff
-nnoremap <silent> <leader>d :Gdiff<cr>
+nnoremap <leader>d (Odebugger;<cr>
+" git diff
+nnoremap <silent> <leader>g :Gdiff<cr>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap <silent> <leader>gg :diffget<cr>
 nnoremap <silent> <leader>gp :diffput<cr>
 nnoremap <silent> <leader>2 :diffget //2<cr>
 nnoremap <silent> <leader>3 :diffget //3<cr>
-":browse oldfiles
+" :browse oldfiles
 nnoremap <silent> <leader>h :bro ol<cr>
 nnoremap <silent> <leader>v :vsp<cr>
 nnoremap <silent> <leader>w :w<cr>
-nnoremap <silent> <leader><cr> :b#<cr>
-nnoremap <silent> <leader>r :%s//<c-r><c-w><cr>
-nnoremap <silent> g0 1gt
-nnoremap <silent> g1 2gt
-nnoremap <silent> g2 3gt
-nnoremap <silent> g3 4gt
-nnoremap <silent> g3 4gt
-nnoremap <silent> g4 5gt
-nnoremap <silent> g5 6gt
-nnoremap <silent> g6 7gt
-nnoremap <silent> g7 8gt
-nnoremap <silent> g8 9gt
+nnoremap <silent> g1 1gt
+nnoremap <silent> g2 2gt
+nnoremap <silent> g3 3gt
+nnoremap <silent> g4 4gt
+nnoremap <silent> g4 4gt
+nnoremap <silent> g5 5gt
+nnoremap <silent> g6 6gt
+nnoremap <silent> g7 7gt
+nnoremap <silent> g8 8gt
+nnoremap <silent> g9 9gt
 nnoremap <silent> g$ :tablast<cr>
 " nnoremap <silent> <leader>s :setlocal spell spelllang=ru_ru,en_us<cr>
 nnoremap <silent> <leader>s :SyntasticToggleMode<cr>
-
 " work with system buffer
 vmap <leader>y "+y
 nmap <leader>p "+p
