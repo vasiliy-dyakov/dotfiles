@@ -349,14 +349,17 @@ nnoremap <silent> <leader>x :close<cr>
 nnoremap <silent> <leader>q :tabclose<cr>
 nnoremap <leader>f mM:Ag<space>
 nnoremap <silent> <leader>o :CtrlP<cr>
-nnoremap <leader>b (Odebugger;<c-[>:w<cr>
+nnoremap <leader>d (Odebugger;<c-[>:w<cr>
 nnoremap <silent> <leader>u u:w<cr>
+"git diff
 nnoremap <silent> <leader>d :Gdiff<cr>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-nnoremap <silent> <leader>g :diffget<cr>
-nnoremap <silent> <leader>dp :diffput<cr>
+nnoremap <silent> <leader>gg :diffget<cr>
+nnoremap <silent> <leader>gp :diffput<cr>
 nnoremap <silent> <leader>2 :diffget //2<cr>
 nnoremap <silent> <leader>3 :diffget //3<cr>
+":browse oldfiles
+nnoremap <silent> <leader>h :bro ol<cr>
 nnoremap <silent> <leader>v :vsp<cr>
 nnoremap <silent> <leader>w :w<cr>
 nnoremap <silent> <leader><cr> :b#<cr>
