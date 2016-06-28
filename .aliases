@@ -31,7 +31,7 @@ alias s1='svn log -l1'
 # Git
 alias ga='git add'
 alias gb='git rev-parse --abbrev-ref @'
-alias gc='ga . --all && git commit -m'
+alias gc='git commit -m'
 alias gd='git di'
 alias gdc='git di --cached'
 alias gds='git di --staged'
