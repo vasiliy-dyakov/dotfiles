@@ -42,6 +42,8 @@ NeoBundle 'airblade/vim-gitgutter'
 " snippets
 NeoBundle 'sirver/ultisnips'
 
+NeoBundle 'mbbill/undotree' " shows all undo tree
+
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-lastpat' "a/ i/ highlighted text
 NeoBundle 'kana/vim-textobj-fold' "az folding
@@ -356,6 +358,7 @@ nnoremap <silent> <leader>r :checktime<cr>
 nnoremap <leader>f mM:Ag<space>
 nnoremap <silent> <leader>o :CtrlP<cr>
 nnoremap <leader>d (Odebugger;<cr>
+nnoremap <leader>u :UndotreeToggle<cr>
 " git diff
 nnoremap <silent> <leader>g :Gdiff<cr>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
