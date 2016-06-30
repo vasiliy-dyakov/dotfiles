@@ -156,6 +156,8 @@ set matchpairs+=<:>         " Make < and > match as well
 " Localization
 set langmenu=none            " Always use english menu
 set keymap=russian-jcukenmac " Alternative keymap
+set langmap=ЙQ,ЦW,УE,КR,ЕT,НY,ГU,ШI,ЩO,ЗP,ФA,ЫS,ВD,АF,ПG,РH,ОJ,ЛK,ДL,ЯZ,ЧX,СC,МV,ИB,ТN,ЬM,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,фa,ыs,вd,аf,пg,рh,оj,лk,дl,яz,чx,сc,мv,иb,тn,ьn,ж\\;,Ж\\:,б\\,ю.,Б\\<,Ю\\>,э\\',Э\\",х\\[,Х\\{,ъ\\],Ъ\\}
+
 set iminsert=0               " English by default
 set imsearch=-1              " Search keymap from insert mode
 " set spell
