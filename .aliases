@@ -55,7 +55,6 @@ gitCommit() {
     if [[ -z $staged ]]; then
         git add --all . && git commit -m "$@"
     else
-        echo 'Commiting staged changes'
         git commit -m "$@"
     fi
 }
