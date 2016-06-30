@@ -31,9 +31,9 @@ alias g9='git lol -9'
 alias s1='svn log -l1'
 
 # Git
-alias ga='git add'
+alias ga='git add --all'
 alias gb='git rev-parse --abbrev-ref @'
-alias gc='git commit -m'
+alias gc=gitCommit
 alias gd='git di'
 alias gdc='git di --cached'
 alias gds='git di --staged'
@@ -50,6 +50,14 @@ alias gs='git st'
 alias gt='git tag'
 alias gst='git stash'
 alias gsts='git stash save'
+gitCommit() {
+    staged=$(git diff --staged --name-only);
+    if [[ -n $staged ]]; then
+        return 'git commit -m'
+    else
+        return 'git add --all . && git commit -m'
+    fi
+}
 stashApply() {
     git stash apply stash@{$1}
 }

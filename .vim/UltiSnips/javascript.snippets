@@ -107,6 +107,34 @@ else {
 }
 endsnippet
 
+snippet switch
+switch ($1) {
+    $2
+}
+endsnippet
+
+snippet case
+case $1:
+    $2
+    break;
+endsnippet
+
+snippet caser
+case $1:
+    return $2;
+endsnippet
+
+snippet default
+default:
+    $1
+    break;
+endsnippet
+
+snippet defaultr
+default:
+    return $1;
+endsnippet
+
 snippet cWM
 componentWillMount() {
     $1

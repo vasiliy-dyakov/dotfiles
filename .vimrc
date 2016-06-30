@@ -33,7 +33,7 @@ if has('lua')
 else
   NeoBundle 'Shougo/neocomplcache'
 endif
-NeoBundle 'Shougo/neosnippet'
+" NeoBundle 'Shougo/neosnippet'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
             \ 'autoload':{'commands':'Gitv'}}
@@ -50,6 +50,7 @@ NeoBundle 'kana/vim-textobj-fold' "az folding
 NeoBundle 'kana/vim-textobj-entire' "ae ie current buffer
 NeoBundle 'glts/vim-textobj-comment' "ac current comment
 NeoBundle 'tpope/vim-abolish' ":%S/{dog,man}/{man,dog}
+NeoBundle 'yegappan/mru' "history files
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
@@ -94,7 +95,7 @@ set hidden                  " hide buffers when they are abandoned
 set autoread                " auto reload changed files
 
 " reloads all buffers on switching between windows, tabs, and cursor move
-au FocusGained,BufEnter,CursorMoved * :silent! checktime
+au FocusGained,BufEnter,CursorHold * :silent! checktime
 " au FocusLost,WinLeave,CursorHold * :silent! w
 
 " Display options
@@ -321,33 +322,33 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 " Neosnippet
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
-
-" For snippet_complete marker.
-if has('conceal')
-  set conceallevel=2 concealcursor=i
-endif
-
-let g:neosnippet#disable_runtime_snippets = {
-      \   '_' : 1,
-      \ }
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/snippets'
+" " Plugin key-mappings.
+" imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+" xmap <C-k>     <Plug>(neosnippet_expand_target)
+"
+" " SuperTab like snippets behavior.
+" imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)"
+" \: pumvisible() ? "\<C-n>" : "\<TAB>"
+" smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+" \ "\<Plug>(neosnippet_expand_or_jump)"
+" \: "\<TAB>"
+"
+" " For snippet_complete marker.
+" if has('conceal')
+"   set conceallevel=2 concealcursor=i
+" endif
+"
+" let g:neosnippet#disable_runtime_snippets = {
+"       \   '_' : 1,
+"       \ }
+"
+" " Enable snipMate compatibility feature.
+" let g:neosnippet#enable_snipmate_compatibility = 1
+"
+" " Tell Neosnippet about the other snippets
+" let g:neosnippet#snippets_directory='~/.vim/snippets'
 
 " custom mapping
 nnoremap <silent> <leader>t :tabnew<cr>
@@ -367,7 +368,7 @@ nnoremap <silent> <leader>gp :diffput<cr>
 nnoremap <silent> <leader>2 :diffget //2<cr>
 nnoremap <silent> <leader>3 :diffget //3<cr>
 " :browse oldfiles
-nnoremap <silent> <leader>h :bro ol<cr>
+nnoremap <silent> <leader>h :Mru<cr>
 nnoremap <silent> <leader>v :vsp<cr>
 nnoremap <silent> <leader>w :w<cr>
 nnoremap <silent> g1 1gt
