@@ -52,10 +52,11 @@ alias gst='git stash'
 alias gsts='git stash save'
 gitCommit() {
     staged=$(git diff --staged --name-only);
-    if [[ -n $staged ]]; then
-        return 'git commit -m'
+    if [[ -z $staged ]]; then
+        git add --all . && git commit -m $@
     else
-        return 'git add --all . && git commit -m'
+        echo 'Commiting staged changes'
+        git commit -m $@
     fi
 }
 stashApply() {
