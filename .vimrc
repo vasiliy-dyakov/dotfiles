@@ -242,8 +242,6 @@ let g:unite_source_buffer_time_format = ''
 nmap <leader> [unite]
 nnoremap [unite] <nop>
 
-nnoremap <silent> [unite]b :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
-
 if executable('ag')
     let g:unite_source_grep_command='ag'
     let g:unite_source_grep_default_opts='--nocolor --nogroup --hidden -S'
@@ -354,23 +352,23 @@ let g:syntastic_javascript_checkers = ['eslint']
 nnoremap <silent> <leader>t :tabnew<cr>
 nnoremap <silent> <leader>x :close<cr>
 nnoremap <silent> <leader>q :tabclose<cr>
+nnoremap <silent> <leader>w :w<cr>
 " reload if changed
 nnoremap <silent> <leader>r :checktime<cr>
 nnoremap <leader>f mM:Ag<space>
-nnoremap <silent> <leader>o :CtrlP<cr>
 nnoremap <leader>d (Odebugger;<cr>
 nnoremap <leader>u :UndotreeToggle<cr>
+nnoremap <leader>G :Gitv<cr>
 " git diff
 nnoremap <silent> <leader>g :Gdiff<cr>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-nnoremap <silent> <leader>gg :diffget<cr>
-nnoremap <silent> <leader>gp :diffput<cr>
+nnoremap <silent> <leader>< :diffget<cr>
+nnoremap <silent> <leader>> :diffput<cr>
 nnoremap <silent> <leader>2 :diffget //2<cr>
 nnoremap <silent> <leader>3 :diffget //3<cr>
 " :browse oldfiles
-nnoremap <silent> <leader>h :Mru<cr>
-nnoremap <silent> <leader>v :vsp<cr>
-nnoremap <silent> <leader>w :w<cr>
+nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
+nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
@@ -382,7 +380,7 @@ nnoremap <silent> g7 7gt
 nnoremap <silent> g8 8gt
 nnoremap <silent> g9 9gt
 nnoremap <silent> g$ :tablast<cr>
-" nnoremap <silent> <leader>s :setlocal spell spelllang=ru_ru,en_us<cr>
+nnoremap <silent> <leader>S :setlocal spell spelllang=ru_ru,en_us<cr>
 nnoremap <silent> <leader>s :SyntasticToggleMode<cr>
 " work with system buffer
 vmap <leader>y "+y
