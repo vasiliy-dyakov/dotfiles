@@ -362,12 +362,13 @@ nnoremap <leader>G :Gitv<cr>
 " git diff
 nnoremap <silent> <leader>g :Gdiff<cr>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-nnoremap <silent> <leader>< :diffget<cr>
-nnoremap <silent> <leader>> :diffput<cr>
+" nnoremap <silent> <leader>> :diffget<cr>
+" nnoremap <silent> <leader>< :diffput<cr>
 nnoremap <silent> <leader>2 :diffget //2<cr>
 nnoremap <silent> <leader>3 :diffget //3<cr>
-" :browse oldfiles
+" :current open
 nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
+" :browse oldfiles
 nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
