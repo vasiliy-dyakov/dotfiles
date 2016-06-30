@@ -259,11 +259,7 @@ endif
 " NERDTree
 let NERDTreeShowHidden=1
 let NERDTreeAutoDeleteBuffer=0
-nmap <silent> <leader><space> :NERDTreeFind<CR>
-nmap <silent> <leader>c :NERDTreeClose<CR>
 
-" fugitive
-nmap <silent> <leader>a :.Gblame<cr>
 " delimitMate
 let delimitMate_matchpairs = '(:),[:],{:}'
 let delimitMate_expand_space = 1
@@ -391,6 +387,13 @@ nmap <leader>p "+p
 nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
+
+nmap <silent> <leader><space> :NERDTreeFind<CR>
+nmap <silent> <leader>c :NERDTreeClose<CR>
+
+" fugitive
+nmap <silent> <leader>a :.Gblame<cr>
+nmap <silent> <leader>A :Gblame<cr>
 
 "Search visual selection by *
 xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>

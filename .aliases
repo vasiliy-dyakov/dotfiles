@@ -69,7 +69,11 @@ alias gstp=stashPop
 alias gstl='git stash list'
 
 vimD() {
-    vim -p `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+    if [[ -z $1 ]]; then
+        vim -p `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+    else
+        vim -p `gd "$1" --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
+    fi
 }
 vimS() {
     vim -p `gds --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
