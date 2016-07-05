@@ -25,7 +25,6 @@ search() {
 alias search=search
 
 alias ct='ctags -R --totals --exclude=node_modules --exclude=mocks'
-alias google='/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --js-flags="--stack-trace-limit 1000" --restore-last-session'
 
 alias g1='git log -1'
 alias g9='git lol -9'
