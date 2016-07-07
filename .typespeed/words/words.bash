@@ -12,9 +12,7 @@ show
 checkout
 branch
 rebase
-conflict
-diff3
-@~1
+origin
 HEAD
 ls
 ag
