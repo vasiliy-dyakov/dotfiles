@@ -31,6 +31,8 @@ alias g9='git lol -9'
 alias s1='svn log -l1'
 
 # Git
+alias pf='tmux splitw -h "npm run server" && npm run static'
+alias pfi='npm i && tmux splitw -h "npm run server" && npm run static'
 alias ga='git add --all'
 alias gb='git rev-parse --abbrev-ref @'
 alias gc=gitCommit
