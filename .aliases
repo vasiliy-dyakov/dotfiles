@@ -30,9 +30,27 @@ alias g1='git log -1'
 alias g9='git lol -9'
 alias s1='svn log -l1'
 
-# Git
+alias tmuxpf=tmuxPF
+tmuxPF() {
+    if tmux has-session -t pf; then
+        tmux a -t pf
+    else
+        cd ~/work/tinkoff-portal-web
+        tmux new-session -s 'pf' -n 'build' -d
+        tmux send-keys 'pfi' Enter
+        tmux new-window -n edit
+        tmux send-keys 'vim' Enter
+        tmux split-window -v -p 2 'npm run watch'
+        tmux new-window -n commands
+        tmux select-window -t 2
+        tmux select-pane -t 1
+        tmux attach-session -d
+    fi
+}
 alias pf='tmux splitw -h "npm run server" && npm run static'
 alias pfi='npm i && tmux splitw -h "npm run server" && npm run static'
+
+# Git
 alias ga='git add --all'
 alias gb='git rev-parse --abbrev-ref @'
 alias gc=gitCommit
