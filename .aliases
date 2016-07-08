@@ -48,7 +48,7 @@ tmuxPF() {
     fi
 }
 alias pf='tmux splitw -h "npm run server" && npm run static'
-alias pfi='npm i && tmux splitw -h "npm run server" && npm run static'
+alias pfi='npm i && pf'
 
 # Git
 alias ga='git add --all'
