@@ -369,9 +369,9 @@ nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer
 " :browse oldfiles
 nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> <leader>j :tabnext<cr>
-nnoremap <silent> <leader>l :tabmove +<cr>
-nnoremap <silent> <leader>h :tabprev<cr>
-nnoremap <silent> <leader>k :tabmove -<cr>
+nnoremap <silent> <leader>k :tabprev<cr>
+nnoremap <silent> <leader>l :tabmove +1<cr>
+nnoremap <silent> <leader>h :tabmove -1<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
