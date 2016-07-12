@@ -40,7 +40,6 @@ tmuxPF() {
         tmux send-keys 'npm install;buildpf' Enter
         tmux splitw -v
         tmux new-window -n edit
-        tmux send-keys 'vim' Enter
         tmux split-window -v -p 2
         tmux send-keys 'npm run watch' Enter
         tmux new-window -n commands
