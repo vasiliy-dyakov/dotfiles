@@ -220,12 +220,12 @@ augroup vimrc
 
 augroup END
 
-set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_contrast='high'
-let g:solarized_termtrans=1
+" set t_Co=256
+" let g:solarized_termcolors=256
+" let g:solarized_contrast='high'
+" let g:solarized_termtrans=1
 
-set background=light
+" set background=light
 colorscheme solarized
 
 " Unite
@@ -450,3 +450,11 @@ let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
+
+hi StatusLine cterm=none ctermfg=7 ctermbg=black
+hi StatusLineNC cterm=none ctermfg=white ctermbg=black
+hi VertSplit cterm=none ctermfg=black ctermbg=black
+hi TabLineFill cterm=none ctermfg=white ctermbg=black
+hi TabLine cterm=none ctermfg=white ctermbg=black
+hi TabLineSel cterm=none ctermfg=black ctermbg=220
+hi Title cterm=none ctermfg=none ctermbg=none
