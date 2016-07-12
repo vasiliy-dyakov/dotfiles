@@ -462,3 +462,7 @@ hi TabLineFill cterm=none ctermfg=white ctermbg=black
 hi TabLine cterm=none ctermfg=white ctermbg=black
 hi TabLineSel cterm=none ctermfg=black ctermbg=220
 hi Title cterm=none ctermfg=none ctermbg=none
+hi MatchParen cterm=none ctermfg=white ctermbg=5
+hi Visual cterm=none ctermfg=white ctermbg=38
+hi IncSearch cterm=none ctermfg=black ctermbg=220
+hi Search cterm=none ctermfg=white ctermbg=5
