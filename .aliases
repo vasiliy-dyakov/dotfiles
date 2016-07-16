@@ -1,37 +1,44 @@
-alias ll='ls -laFo'
+alias ll='ls -la'
 alias l='ls -l'
 alias la='ls -a'
-alias ltr='ls -ltr'
-alias ..='cd ..'
-alias ...='cd ../..'
 
 alias grep='grep --color=auto'
 
-alias e=$EDITOR
-alias es='vim -c"sy off"'
-
-replace() {
-    # заменить React на Angular в папке components в файлах, удовлетворяющих шаблону \.jsx$
-    # replace React Angular components \.jsx$
-    # sed -i '' -e s/React/Angular/ `ag -l React components -G \.jsx$`
-    sed -i '' -e s/$1/$2/ `ag -l $1 $3 -G ${4:-'.*'}`
+# Git
+alias ga='git add --all'
+gc() {
+    staged=$(git diff --staged --name-only);
+    if [[ -z $staged ]]; then
+        git add --all . && git commit -m "$@"
+    else
+        git commit -m "$@"
+    fi
 }
-alias replace=replace
-
-# искать файл по имени (шаблон)
-search() {
-    ag -l -G $1 --smart-case --hidden
+alias gd='git di'
+alias gdc='git di --cached'
+alias gds='git di --staged'
+alias gdpr='gd `git merge-base ${1:-origin/develop} HEAD`..HEAD'
+alias gf='git fetch --prune'
+alias gh='git hist'
+alias gl='git lol'
+alias g9='git lol -9'
+alias gp='git pull --rebase'
+alias gs='git st'
+alias gst='git stash'
+alias gsts='git stash save'
+gsta() {
+    git stash apply stash@{$1}
 }
-alias search=search
+gstp() {
+    git stash pop stash@{$1}
+}
+alias gstl='git stash list'
 
+# ctags
 alias ct='ctags -R --totals --exclude=node_modules --exclude=mocks'
 
-alias g1='git log -1'
-alias g9='git lol -9'
-alias s1='svn log -l1'
-
-alias tmuxpf=tmuxPF
-tmuxPF() {
+# create pf session
+tmuxpf() {
     if tmux has-session -t pf; then
         tmux a -t pf
     else
@@ -48,63 +55,21 @@ tmuxPF() {
         tmux attach-session -d
     fi
 }
-alias buildpf=buildPF
-buildPF() {
+buildpf() {
     tmux send-keys -t 1.1 'npm run static' Enter
     tmux send-keys -t 1.2 'npm run server' Enter
 }
 
-# Git
-alias ga='git add --all'
-alias gb='git rev-parse --abbrev-ref @'
-alias gc=gitCommit
-alias gd='git di'
-alias gdc='git di --cached'
-alias gds='git di --staged'
-alias gdpr='gd `git merge-base ${1:-origin/develop} HEAD`..HEAD'
-# отличие текущего бранча от точки начала
-alias gdb='gd `git rev-list --boundary $(gb)...develop | grep ^- | cut -c2-`..`gb`'
-alias gf='git fetch --prune'
-alias gh='git hist'
-alias gl='git lol'
-alias gm='git merge --no-ff'
-alias gp='git pull --rebase'
-alias gr='git remote -v'
-alias gs='git st'
-alias gt='git tag'
-alias gst='git stash'
-alias gsts='git stash save'
-gitCommit() {
-    staged=$(git diff --staged --name-only);
-    if [[ -z $staged ]]; then
-        git add --all . && git commit -m "$@"
-    else
-        git commit -m "$@"
-    fi
-}
-stashApply() {
-    git stash apply stash@{$1}
-}
-alias gsta=stashApply
-stashPop() {
-    git stash pop stash@{$1}
-}
-alias gstp=stashPop
-alias gstl='git stash list'
-
-vimD() {
+vimd() {
     if [[ -z $1 ]]; then
         vim -p `gd --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
     else
         vim -p `gd "$1" --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
     fi
 }
-vimS() {
+vims() {
     vim -p `gds --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
 }
-vimPr() {
+vimpr() {
     vim -p `gdpr --name-status | grep -E '^[AM]' | awk ' {print $2} ' | xargs ls 2>/dev/null`
 }
-alias vimd=vimD
-alias vims=vimS
-alias vimpr=vimPr

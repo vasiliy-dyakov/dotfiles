@@ -2,20 +2,15 @@ export PATH=./node_modules/.bin:$PATH
 export PATH=~/node_modules/.bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 export PATH=~/bin:$PATH
-export PATH=~/dotfiles/bin:$PATH
-export PATH=/usr/local/php5/bin:$PATH
-export PATH=~/.rvm/bin:$PATH
-export PATH=/Berkanavt/bin:$PATH
-export PATH=/Berkanavt/bin/scripts:$PATH
-export PATH=~/android-sdk-macosx/platform-tools:$PATH
 
 export NODE_PATH=./node_modules:$NODE_PATH
 
 export LANG=ru_RU.UTF-8
 export PS1='\[\033[45m\]\[\033[37m\] \w \[\033[40m\]$(__git_ps1 " %s ")\[\033[0m\] '
-# export PS1='$PURPLE\[\w\]$MAGENTA$(__git_ps1 " (%s)")$RESET › $RESET'
+
 PROMPT_TITLE='echo -ne "\033]0;${PWD/#$HOME/~}/$(__git_ps1 "%s/")\007"'
 export PROMPT_COMMAND="${PROMPT_COMMAND} ${PROMPT_TITLE};"
+
 export LC_ALL=ru_RU.UTF-8
 export BLOCKSIZE=K      # FreeBSD only
 export EDITOR=vim
@@ -24,8 +19,6 @@ export CLICOLOR=yes; # git colors
 export TERM=screen-256color
 
 # http://habrahabr.ru/post/153871/
-export LESS_TERMCAP_mb=$MAGENTA
-# export LESS_TERMCAP_md=$ORANGE
 export LESS_TERMCAP_me=$'\E[0m'
 export LESS_TERMCAP_so=$'\E[42;30m'
 export LESS_TERMCAP_se=$'\E[0m'
