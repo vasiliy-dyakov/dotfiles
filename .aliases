@@ -56,7 +56,9 @@ tmuxpf() {
     fi
 }
 buildpf() {
+    tmux send-keys -t 1.1 C-c
     tmux send-keys -t 1.1 'npm run static' Enter
+    tmux send-keys -t 1.2 C-c
     tmux send-keys -t 1.2 'npm run server' Enter
 }
 
