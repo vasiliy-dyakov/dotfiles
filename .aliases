@@ -70,13 +70,13 @@ tmuxpf() {
     else
         cd ~/work/tinkoff-portal-web
         tmux new-session -s 'pf' -n 'build' -d
-        tmux send-keys 'npm install;buildpf' Enter
         tmux splitw -v
         tmux new-window -n edit
         tmux split-window -v -p 2
         tmux new-window -n commands
         tmux select-window -t 2
         tmux select-pane -t 1
+        tmux send-keys -t 1.1 'npm install;buildpf' Enter
         tmux attach-session -d
     fi
 }
