@@ -72,8 +72,8 @@ tmuxpf() {
         tmux new-session -s 'pf' -n 'build' -d
         tmux splitw -v
         tmux new-window -n edit
-        tmux split-window -v -p 2
         tmux new-window -n commands
+        tmux new-window -n tests
         tmux select-window -t 2
         tmux select-pane -t 1
         tmux send-keys -t 1.1 'npm install;buildpf' Enter
@@ -85,8 +85,8 @@ buildpf() {
     tmux send-keys -t 1.1 'npm run static' Enter
     tmux send-keys -t 1.2 C-c
     tmux send-keys -t 1.2 'npm run server' Enter
-    tmux send-keys -t 2.2 C-c
-    tmux send-keys -t 2.2 'npm run watch' Enter
+    tmux send-keys -t 4.1 C-c
+    tmux send-keys -t 4.1 'npm run watch' Enter
 }
 
 vimd() {
