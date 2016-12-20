@@ -309,12 +309,12 @@ else
 endif
 
 " Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
@@ -355,7 +355,6 @@ nnoremap <silent> <leader>w :w<cr>
 " reload if changed
 nnoremap <silent> <leader>r :checktime<cr>
 nnoremap <leader>f mM:Ag<space>
-nnoremap <leader>d (Odebugger;<cr>
 nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader>G :Gitv<cr>
 " git diff
@@ -371,6 +370,7 @@ nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer
 nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> <leader>l :tabmove +1<cr>
 nnoremap <silent> <leader>h :tabmove -1<cr>
+nnoremap <silent> <leader>e :Errors<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
@@ -465,6 +465,8 @@ hi MatchParen cterm=none ctermfg=white ctermbg=5
 hi Visual cterm=none ctermfg=white ctermbg=38
 hi IncSearch cterm=none ctermfg=black ctermbg=220
 hi Search cterm=none ctermfg=white ctermbg=5
+hi SyntasticErrorSign cterm=none ctermfg=white ctermbg=160
+hi SyntasticWarningSign cterm=none ctermfg=white ctermbg=220
 
 " make cursor box in command mode and vertical bar in insert mode
 if exists('$TMUX')

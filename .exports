@@ -1,3 +1,4 @@
+export GIT_SSL_NO_VERIFY=true
 export PATH=./node_modules/.bin:$PATH
 export PATH=~/node_modules/.bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
