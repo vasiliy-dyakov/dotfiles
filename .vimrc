@@ -316,8 +316,8 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-nmap <silent> <leader><space> :NERDTreeFind<CR>
-nmap <silent> <leader>c :NERDTreeClose<CR>
+nmap <silent> <leader><space> :NERDTreeTabsOpen<CR>:NERDTreeTabsFind<CR>
+nmap <silent> <leader>c :NERDTreeTabsClose<CR>
 
 " fugitive
 nmap <silent> <leader>a :.Gblame<cr>
@@ -378,6 +378,9 @@ let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
+
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_smart_startup_focus=2
 
 hi StatusLine cterm=none ctermfg=7 ctermbg=black
 hi StatusLineNC cterm=none ctermfg=white ctermbg=black
