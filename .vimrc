@@ -49,12 +49,20 @@ set wrap
 set backspace=indent,eol,start " Allow backspace to remove indents, newlines and old tex"
 " set virtualedit=block
 set iskeyword+=-
-set nobackup
-set nowritebackup
-set noswapfile
 set binary
 set eol
 set suffixesadd=.js         " to open files without extension (es6 modules, requirejs, etc)
+
+"Backup files
+silent !mkdir -p ~/tmp/swap
+silent !mkdir -p ~/tmp/undo
+
+set nobackup
+set nowritebackup
+set directory=~/tmp/swap//
+set undodir=~/tmp/undo//
+set swapfile
+set undofile
 
 " Tab options
 set autoindent              " copy indent from previous line
@@ -379,8 +387,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
 
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=2
+" let g:nerdtree_tabs_open_on_console_startup=1
+" let g:nerdtree_tabs_smart_startup_focus=2
 
 hi StatusLine cterm=none ctermfg=7 ctermbg=black
 hi StatusLineNC cterm=none ctermfg=white ctermbg=black
