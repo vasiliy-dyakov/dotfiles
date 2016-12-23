@@ -305,6 +305,7 @@ nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> <leader>l :tabmove +1<cr>
 nnoremap <silent> <leader>h :tabmove -1<cr>
 nnoremap <silent> <leader>e :Errors<cr>
+nnoremap <silent> <leader>r :SyntasticReset<cr>
 nnoremap <silent> <leader>n :lnext<cr>
 nnoremap <silent> <leader>p :lprev<cr>
 nnoremap <silent> g1 1gt
