@@ -39,7 +39,7 @@ set ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%)
 set ttyfast                 " Optimize for fast terminal connections
 set ttymouse=sgr
-set shortmess=atI           " Don’t show the intro message when starting Vim
+set shortmess=aOI           " Don’t show the intro message when starting Vim
 set nostartofline
 set number                  " Show line numbers
 
@@ -246,11 +246,12 @@ endif
 " set statusline+=%{SyntasticStatuslineFlag()}
 " set statusline+=%*
 "
-" let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_echo_current_error = 1
+let g:syntastic_css_checkers = ['stylelint']
+" let g:syntastic_echo_current_error = 1
 
 " Neosnippet
 " " Plugin key-mappings.
@@ -305,6 +306,8 @@ nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> <leader>l :tabmove +1<cr>
 nnoremap <silent> <leader>h :tabmove -1<cr>
 nnoremap <silent> <leader>e :Errors<cr>
+nnoremap <silent> <leader>n :lnext<cr>
+nnoremap <silent> <leader>p :lprev<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
@@ -318,12 +321,6 @@ nnoremap <silent> g9 9gt
 nnoremap <silent> g$ :tablast<cr>
 nnoremap <silent> <leader>S :setlocal spell spelllang=ru_ru,en_us<cr>
 nnoremap <silent> <leader>s :SyntasticToggleMode<cr>
-" work with system buffer
-vmap <leader>y "+y
-nmap <leader>p "+p
-nmap <leader>P "+P
-vmap <leader>p "+p
-vmap <leader>P "+P
 
 nmap <silent> <leader><space> :NERDTreeTabsOpen<cr>:NERDTreeTabsFind<cr>
 nmap <silent> <leader>c :NERDTreeTabsClose<cr>
