@@ -251,7 +251,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_css_checkers = ['stylelint']
-" let g:syntastic_echo_current_error = 1
 
 " Neosnippet
 " " Plugin key-mappings.
@@ -319,8 +318,10 @@ nnoremap <silent> g7 7gt
 nnoremap <silent> g8 8gt
 nnoremap <silent> g9 9gt
 nnoremap <silent> g$ :tablast<cr>
-nnoremap <silent> <leader>S :setlocal spell spelllang=ru_ru,en_us<cr>
-nnoremap <silent> <leader>s :SyntasticToggleMode<cr>
+" nnoremap <silent> <leader>S :setlocal spell spelllang=ru_ru,en_us<cr>
+
+nnoremap <silent> <leader>s :let g:syntastic_auto_jump = 1<cr>:let g:syntastic_quiet_messages={'level':'warnings'}<cr>:SyntasticCheck<cr>:let g:syntastic_auto_jump = 0<cr>:let g:syntastic_quiet_messages={}<cr>
+nnoremap <silent> <leader>S :SyntasticCheck<cr>
 
 nmap <silent> <leader><space> :NERDTreeTabsOpen<cr>:NERDTreeTabsFind<cr>
 nmap <silent> <leader>c :NERDTreeTabsClose<cr>
