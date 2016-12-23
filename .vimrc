@@ -250,6 +250,7 @@ endif
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_echo_current_error = 1
 
 " Neosnippet
 " " Plugin key-mappings.
@@ -324,8 +325,8 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-nmap <silent> <leader><space> :NERDTreeTabsOpen<CR>:NERDTreeTabsFind<CR>
-nmap <silent> <leader>c :NERDTreeTabsClose<CR>
+nmap <silent> <leader><space> :NERDTreeTabsOpen<cr>:NERDTreeTabsFind<cr>
+nmap <silent> <leader>c :NERDTreeTabsClose<cr>
 
 " fugitive
 nmap <silent> <leader>a :.Gblame<cr>
@@ -343,6 +344,9 @@ endfunction
 function! s:SetSearch()
     let @/ = '\V' . substitute(escape(@+, '/\'), '\n', '\\n', 'g')
 endfunction
+
+" let g:nerdtree_tabs_open_on_console_startup=1
+" let g:nerdtree_tabs_smart_startup_focus=2
 
 "CtrlP
 if executable('ag')
@@ -386,9 +390,6 @@ let g:UltiSnipsJumpForwardTrigger="<c-k>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
-
-" let g:nerdtree_tabs_open_on_console_startup=1
-" let g:nerdtree_tabs_smart_startup_focus=2
 
 hi StatusLine cterm=none ctermfg=7 ctermbg=black
 hi StatusLineNC cterm=none ctermfg=white ctermbg=black
