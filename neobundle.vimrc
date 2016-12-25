@@ -51,19 +51,21 @@ NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'vim-scripts/tlib'
-NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle 'bling/vim-airline'
+NeoBundle 'vim-airline/vim-airline-themes'
 
 NeoBundleLazy 'othree/html5.vim', { 'autoload': { 'filetypes': ['html', 'css'] } }
 
 NeoBundle 'gregsexton/MatchTag'
 NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'ignovak/vim-web-indent'
 
 " CSS/LESS
 NeoBundle 'groenewege/vim-less'
