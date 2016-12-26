@@ -52,6 +52,8 @@ set iskeyword+=-
 set binary
 set eol
 set suffixesadd=.js         " to open files without extension (es6 modules, requirejs, etc)
+set timeoutlen=1000
+set ttimeoutlen=0
 
 "Backup files
 silent !mkdir -p ~/tmp/swap
@@ -266,13 +268,7 @@ let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
@@ -282,7 +278,8 @@ let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = '|'
+let g:airline_symbols.linenr = ''
+let g:airline_symbols.maxlinenr = ''
 " Neosnippet
 " " Plugin key-mappings.
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
