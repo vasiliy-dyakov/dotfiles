@@ -255,7 +255,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_css_checkers = ['stylelint']
 
-let g:airline_theme='solarized'
+let g:airline_theme='base16'
 " air-line
 let g:airline_powerline_fonts = 1
 
@@ -421,8 +421,11 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
 
-hi TabLineFill cterm=none ctermfg=white ctermbg=black
-hi TabLine cterm=none ctermfg=white ctermbg=black
+hi TabLineFill cterm=none ctermfg=white ctermbg=16
+hi TabLine cterm=none ctermfg=white ctermbg=16
+hi VertSplit cterm=none ctermfg=16 ctermbg=16
+hi StatusLine cterm=none ctermbg=16
+hi StatusLineNC cterm=none ctermfg=16 ctermbg=16
 hi TabLineSel cterm=none ctermfg=black ctermbg=255
 hi Title cterm=none ctermfg=none ctermbg=none
 hi MatchParen cterm=none ctermfg=white ctermbg=5
