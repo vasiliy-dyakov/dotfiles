@@ -421,8 +421,8 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
 
-hi TabLineFill cterm=none ctermfg=white ctermbg=12
-hi TabLine cterm=none ctermfg=white ctermbg=12
+hi TabLineFill cterm=none ctermfg=white ctermbg=black
+hi TabLine cterm=none ctermfg=white ctermbg=black
 hi TabLineSel cterm=none ctermfg=black ctermbg=255
 hi Title cterm=none ctermfg=none ctermbg=none
 hi MatchParen cterm=none ctermfg=white ctermbg=5
