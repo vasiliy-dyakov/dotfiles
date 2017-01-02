@@ -280,6 +280,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.notexists = ''
 " Neosnippet
 " " Plugin key-mappings.
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -420,12 +421,9 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
 
-" hi StatusLine cterm=none ctermfg=7 ctermbg=black
-" hi StatusLineNC cterm=none ctermfg=white ctermbg=black
-hi VertSplit cterm=none ctermfg=black ctermbg=black
-hi TabLineFill cterm=none ctermfg=white ctermbg=black
-hi TabLine cterm=none ctermfg=white ctermbg=black
-hi TabLineSel cterm=none ctermfg=black ctermbg=220
+hi TabLineFill cterm=none ctermfg=white ctermbg=12
+hi TabLine cterm=none ctermfg=white ctermbg=12
+hi TabLineSel cterm=none ctermfg=black ctermbg=255
 hi Title cterm=none ctermfg=none ctermbg=none
 hi MatchParen cterm=none ctermfg=white ctermbg=5
 hi Visual cterm=none ctermfg=white ctermbg=38
