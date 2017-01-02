@@ -355,7 +355,7 @@ nnoremap <silent> g$ :tablast<cr>
 nnoremap <silent> <leader>s :let g:syntastic_auto_jump = 1<cr>:let g:syntastic_quiet_messages={'level':'warnings'}<cr>:SyntasticCheck<cr>:let g:syntastic_auto_jump = 0<cr>:let g:syntastic_quiet_messages={}<cr>
 nnoremap <silent> <leader>S :SyntasticCheck<cr>
 
-nmap <silent> <leader><space> :NERDTreeTabsFind<cr>
+nmap <silent> <leader><space> :NERDTreeTabsOpen<cr> :NERDTreeTabsFind<cr>
 nmap <silent> <leader>c :NERDTreeTabsToggle<cr>
 
 " fugitive
@@ -375,8 +375,9 @@ function! s:SetSearch()
     let @/ = '\V' . substitute(escape(@+, '/\'), '\n', '\\n', 'g')
 endfunction
 
-let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_smart_startup_focus=2
+" let g:nerdtree_tabs_open_on_console_startup=1
+" let g:nerdtree_tabs_smart_startup_focus=2
+" let g:nerdtree_tabs_autofind=1
 
 "CtrlP
 if executable('ag')
