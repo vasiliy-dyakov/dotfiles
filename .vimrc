@@ -426,7 +426,7 @@ hi TabLine cterm=none ctermfg=white ctermbg=16
 hi VertSplit cterm=none ctermfg=16 ctermbg=16
 hi StatusLine cterm=none ctermbg=16
 hi StatusLineNC cterm=none ctermfg=16 ctermbg=16
-hi TabLineSel cterm=none ctermfg=black ctermbg=255
+hi TabLineSel cterm=none ctermfg=black ctermbg=7
 hi Title cterm=none ctermfg=none ctermbg=none
 hi MatchParen cterm=none ctermfg=white ctermbg=5
 hi Visual cterm=none ctermfg=white ctermbg=38
