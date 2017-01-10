@@ -284,8 +284,17 @@ let g:airline_symbols.notexists = ''
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
 
+let g:gitgutter_enabled = 1
+let g:gitgutter_diff_args = '-w'
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
+let g:gitgutter_updatetime = 250
 let g:gitgutter_sign_column_always = 1
 let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_sign_added = ' '
+let g:gitgutter_sign_modified = ' '
+let g:gitgutter_sign_removed_first_line = ' ‾'
+let g:gitgutter_sign_modified_removed = ' ‾'
 
 " Neosnippet
 " " Plugin key-mappings.
@@ -339,12 +348,12 @@ nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer
 nnoremap <silent> <leader>O :Mru<cr>
 nnoremap <silent> <leader>l :tabmove +1<cr>
 nnoremap <silent> <leader>h :tabmove -1<cr>
-nnoremap <silent> <leader>e :Errors<cr>
-nnoremap <silent> <leader>r :SyntasticReset<cr>
 nnoremap <silent> <leader>n :lnext<cr>
 nnoremap <silent> <leader>p :lprev<cr>
 nnoremap <silent> <leader>J :set ft=html<cr>
 nnoremap <silent> <leader>j :set ft=javascript<cr>
+nnoremap <silent> <leader>hn :GitGutterNextHunk<cr>
+nnoremap <silent> <leader>hp :GitGutterPrevHunk<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
@@ -441,6 +450,10 @@ hi IncSearch cterm=none ctermfg=black ctermbg=220
 hi Search cterm=none ctermfg=white ctermbg=5
 hi AleErrorSign cterm=none ctermfg=160 ctermbg=7
 hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
+hi GitGutterAdd cterm=none ctermbg=113
+hi GitGutterChange cterm=none ctermbg=117
+hi GitGutterChangeDelete cterm=none ctermbg=117
+hi GitGutterDelete cterm=none ctermfg=160 ctermbg=7
 hi SignColumn ctermbg=7
 hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
 
