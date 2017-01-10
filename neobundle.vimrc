@@ -45,7 +45,8 @@ NeoBundle 'kana/vim-textobj-entire' "ae ie current buffer
 NeoBundle 'glts/vim-textobj-comment' "ac current comment
 NeoBundle 'tpope/vim-abolish' ":%S/{dog,man}/{man,dog}
 NeoBundle 'yegappan/mru' "history files
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
+NeoBundle 'w0rp/ale'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
 NeoBundle 'jpalardy/vim-slime'

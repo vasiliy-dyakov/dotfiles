@@ -244,16 +244,15 @@ else
 
 endif
 
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-"
-let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_css_checkers = ['stylelint']
+" " Syntastic
+" " set statusline+=%#warningmsg#
+" " set statusline+=%{SyntasticStatuslineFlag()}
+" " set statusline+=%*
+" let g:syntastic_always_populate_loc_list = 1
+" " let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_css_checkers = ['stylelint']
 
 let g:airline_theme='base16'
 " air-line
@@ -281,6 +280,13 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.notexists = ''
+
+let g:ale_sign_error = ''
+let g:ale_sign_warning = ''
+
+let g:gitgutter_sign_column_always = 1
+let g:gitgutter_override_sign_column_highlight = 0
+
 " Neosnippet
 " " Plugin key-mappings.
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -433,8 +439,10 @@ hi MatchParen cterm=none ctermfg=white ctermbg=5
 hi Visual cterm=none ctermfg=white ctermbg=38
 hi IncSearch cterm=none ctermfg=black ctermbg=220
 hi Search cterm=none ctermfg=white ctermbg=5
-hi SyntasticErrorSign cterm=none ctermfg=white ctermbg=160
-hi SyntasticWarningSign cterm=none ctermfg=white ctermbg=220
+hi AleErrorSign cterm=none ctermfg=160 ctermbg=7
+hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
+hi SignColumn ctermbg=7
+hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
 
 " make cursor box in command mode and vertical bar in insert mode
 if exists('$TMUX')
