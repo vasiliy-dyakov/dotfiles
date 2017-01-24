@@ -44,6 +44,7 @@ set nostartofline
 set number                  " Show line numbers
 
 set wrap
+execute "set cc=".join(range(141,365), ',')
 
 " Edit
 set backspace=indent,eol,start " Allow backspace to remove indents, newlines and old tex"
@@ -293,6 +294,7 @@ let g:gitgutter_sign_column_always = 1
 let g:gitgutter_override_sign_column_highlight = 0
 let g:gitgutter_sign_added = ' '
 let g:gitgutter_sign_modified = ' '
+let g:gitgutter_sign_removed = ' _'
 let g:gitgutter_sign_removed_first_line = ' ‾'
 let g:gitgutter_sign_modified_removed = ' ‾'
 
@@ -354,6 +356,7 @@ nnoremap <silent> <leader>J :set ft=html<cr>
 nnoremap <silent> <leader>j :set ft=javascript<cr>
 nnoremap <silent> <leader>hn :GitGutterNextHunk<cr>
 nnoremap <silent> <leader>hp :GitGutterPrevHunk<cr>
+nnoremap <silent> <leader>hv :GitGutterPreviewHunk<cr>
 nnoremap <silent> g1 1gt
 nnoremap <silent> g2 2gt
 nnoremap <silent> g3 3gt
@@ -437,6 +440,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
 
+hi EndOfBuffer cterm=none ctermfg=7 ctermbg=7
 hi TabLineFill cterm=none ctermfg=white ctermbg=16
 hi TabLine cterm=none ctermfg=white ctermbg=16
 hi VertSplit cterm=none ctermfg=16 ctermbg=16
