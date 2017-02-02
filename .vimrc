@@ -28,7 +28,8 @@ set novisualbell            " mute error bell
 set list
 set listchars=tab:⇥\ ,trail:·,extends:⋯,precedes:⋯,nbsp:~
 set linebreak               " break lines by words
-set scrolljump=5
+set scrolloff=5
+set scrolljump=1
 set sidescroll=4
 set sidescrolloff=10
 set showcmd
@@ -44,7 +45,7 @@ set nostartofline
 set number                  " Show line numbers
 
 set wrap
-execute "set cc=".join(range(141,365), ',')
+" execute "set cc=".join(range(141,365), ',')
 
 " Edit
 set backspace=indent,eol,start " Allow backspace to remove indents, newlines and old tex"
@@ -440,7 +441,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
 let g:UltiSnipsEditSplit="vertical"
 
-hi EndOfBuffer cterm=none ctermfg=7 ctermbg=7
+hi EndOfBuffer cterm=none ctermfg=bg
 hi TabLineFill cterm=none ctermfg=white ctermbg=16
 hi TabLine cterm=none ctermfg=white ctermbg=16
 hi VertSplit cterm=none ctermfg=16 ctermbg=16

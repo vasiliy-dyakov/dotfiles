@@ -64,9 +64,6 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'severin-lemaignan/vim-minimap'
 NeoBundle 'ap/vim-css-color'
-" NeoBundle 'kien/rainbow_parentheses.vim'
-" NeoBundle 'nathanaelkane/vim-indent-guides'
-" NeoBundle 'yggdroot/indentline'
 
 NeoBundleLazy 'othree/html5.vim', { 'autoload': { 'filetypes': ['html', 'css'] } }
 
