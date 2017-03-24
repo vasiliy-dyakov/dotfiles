@@ -79,6 +79,26 @@ set softtabstop=4           " tab like 4 spaces
 set shiftround              " drop unused spaces
 " let g:html_indent_inctags = "html,body,head,tbody"
 
+function! DelTagOfFile(file)
+  let fullpath = a:file
+  let cwd = getcwd()
+  let tagfilename = cwd . "/tags"
+  let f = substitute(fullpath, cwd . "/", "", "")
+  let f = escape(f, './')
+  let cmd = 'sed -i "/' . f . '/d" "' . tagfilename . '"'
+  let resp = system(cmd)
+endfunction
+
+function! UpdateTags()
+  let f = expand("%:p")
+  let cwd = getcwd()
+  let tagfilename = cwd . "/tags"
+  let cmd = 'ctags -a -f ' . tagfilename . ' --c++-kinds=+p --fields=+iaS --extra=+q ' . '"' . f . '"'
+  call DelTagOfFile(f)
+  let resp = system(cmd)
+endfunction
+autocmd BufWritePost *.jsx,*.js,*.less,*.css call UpdateTags()
+
 " Search options
 set gdefault                " Add the g flag to search/replace by default
 set hlsearch                " Highlight search results
