@@ -64,6 +64,7 @@ NeoBundle 'bling/vim-airline'
 NeoBundle 'vim-airline/vim-airline-themes'
 NeoBundle 'severin-lemaignan/vim-minimap'
 NeoBundle 'ap/vim-css-color'
+NeoBundle 'matze/vim-move'
 
 NeoBundleLazy 'othree/html5.vim', { 'autoload': { 'filetypes': ['html', 'css'] } }
 

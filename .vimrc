@@ -43,6 +43,7 @@ set ttymouse=sgr
 set shortmess=aOI           " Don’t show the intro message when starting Vim
 set nostartofline
 set number                  " Show line numbers
+set cursorline
 
 set wrap
 " execute "set cc=".join(range(141,365), ',')
@@ -320,6 +321,8 @@ let g:gitgutter_sign_removed = ' _'
 let g:gitgutter_sign_removed_first_line = ' ‾'
 let g:gitgutter_sign_modified_removed = ' ‾'
 
+let g:move_key_modifier = 'C'
+
 " Neosnippet
 " " Plugin key-mappings.
 " imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -478,11 +481,13 @@ hi IncSearch cterm=none ctermfg=black ctermbg=220
 hi Search cterm=none ctermfg=white ctermbg=5
 hi AleErrorSign cterm=none ctermfg=160 ctermbg=7
 hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
-hi GitGutterAdd cterm=none ctermbg=113
-hi GitGutterChange cterm=none ctermbg=117
-hi GitGutterChangeDelete cterm=none ctermbg=117
+hi GitGutterAdd cterm=none ctermbg=2
+hi GitGutterChange cterm=none ctermbg=4
+hi GitGutterChangeDelete cterm=none ctermbg=4
 hi GitGutterDelete cterm=none ctermfg=160 ctermbg=7
 hi SignColumn ctermbg=7
+hi clear CursorLineNR
+hi CursorLineNR ctermbg=7
 hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
 
 " make cursor box in command mode and vertical bar in insert mode
