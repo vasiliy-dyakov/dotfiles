@@ -185,7 +185,7 @@ augroup END
 " let g:solarized_contrast='high'
 " let g:solarized_termtrans=1
 
-" set background=light
+" set background=dark
 colorscheme solarized
 
 " Unite
@@ -322,6 +322,8 @@ let g:gitgutter_sign_removed_first_line = ' ‾'
 let g:gitgutter_sign_modified_removed = ' ‾'
 
 let g:move_key_modifier = 'C'
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:used_javascript_libs = 'react,jasmine'
 
 " Neosnippet
 " " Plugin key-mappings.
@@ -479,16 +481,16 @@ hi MatchParen cterm=none ctermfg=white ctermbg=5
 hi Visual cterm=none ctermfg=white ctermbg=38
 hi IncSearch cterm=none ctermfg=black ctermbg=220
 hi Search cterm=none ctermfg=white ctermbg=5
-hi AleErrorSign cterm=none ctermfg=160 ctermbg=7
-hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
+hi AleErrorSign cterm=none ctermfg=160 ctermbg=bg
+hi AleWarningSign cterm=none ctermfg=220 ctermbg=bg
 hi GitGutterAdd cterm=none ctermbg=2
 hi GitGutterChange cterm=none ctermbg=4
 hi GitGutterChangeDelete cterm=none ctermbg=4
-hi GitGutterDelete cterm=none ctermfg=160 ctermbg=7
-hi SignColumn ctermbg=7
+hi GitGutterDelete cterm=none ctermfg=160 ctermbg=bg
+hi SignColumn ctermbg=bg
 hi clear CursorLineNR
-hi CursorLineNR ctermbg=7
-hi AleWarningSign cterm=none ctermfg=220 ctermbg=7
+hi CursorLineNR ctermbg=bg
+hi AleWarningSign cterm=none ctermfg=220 ctermbg=bg
 
 " make cursor box in command mode and vertical bar in insert mode
 if exists('$TMUX')
