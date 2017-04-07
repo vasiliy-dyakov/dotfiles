@@ -322,6 +322,7 @@ let g:gitgutter_sign_removed_first_line = ' ‾'
 let g:gitgutter_sign_modified_removed = ' ‾'
 
 let g:move_key_modifier = 'C'
+let g:xml_syntax_folding = 0
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
 let g:used_javascript_libs = 'react,jasmine'
 
