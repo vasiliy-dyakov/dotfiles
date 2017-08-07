@@ -54,7 +54,7 @@ set backspace=indent,eol,start " Allow backspace to remove indents, newlines and
 set iskeyword+=-
 set binary
 set eol
-set suffixesadd=.js         " to open files without extension (es6 modules, requirejs, etc)
+set suffixesadd=.js,.ts,.tsx         " to open files without extension (es6 modules, requirejs, etc)
 set timeoutlen=1000
 set ttimeoutlen=0
 
