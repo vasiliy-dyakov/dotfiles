@@ -38,6 +38,7 @@
     untracked = cyan
 
 [alias]
+    pu = push --no-verify
     st = status
     br = branch
     co = checkout

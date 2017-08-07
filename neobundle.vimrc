@@ -77,6 +77,8 @@ NeoBundleLazy 'othree/html5.vim', { 'autoload': { 'filetypes': ['html', 'css'] }
 NeoBundle 'gregsexton/MatchTag'
 NeoBundle 'hail2u/vim-css3-syntax'
 
+NeoBundle 'leafgarland/typescript-vim'
+
 " CSS/LESS
 NeoBundle 'groenewege/vim-less'
 " END BUNDLES }}}
