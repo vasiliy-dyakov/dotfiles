@@ -76,6 +76,7 @@ NeoBundleLazy 'othree/html5.vim', { 'autoload': { 'filetypes': ['html', 'css'] }
 
 NeoBundle 'gregsexton/MatchTag'
 NeoBundle 'hail2u/vim-css3-syntax'
+NeoBundle 'uguu-org/vim-matrix-screensaver'
 
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'HerringtonDarkholme/yats.vim'
@@ -83,10 +84,10 @@ NeoBundle 'Quramy/vim-js-pretty-template'
 " NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build' : {
-     \     'mac' : './install.sh --clang-completer --system-libclang',
-     \     'unix' : './install.sh --clang-completer --system-libclang',
-     \     'windows' : './install.sh --clang-completer --system-libclang',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang'
+     \     'mac' : './install.sh --tern-completer',
+     \     'unix' : './install.sh --tern-completer',
+     \     'windows' : './install.sh --tern-completer',
+     \     'cygwin' : './install.sh --tern-completer'
      \    }
      \ }
 

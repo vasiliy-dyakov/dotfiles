@@ -295,6 +295,7 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
 " airline symbols
+let g:ycm_error_symbol = ''
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -467,6 +468,10 @@ let g:ycm_semantic_triggers['typescript'] = ['.']
 function! SQLUpperCase()
     %s:\<analyze\>\|\<and\>\|\<as\>\|\<by\>\|\<desc\>\|\<exists\>\|\<explain\>\|\<from\>\|\<group\>\|\<in\>\|\<insert\>\|\<intersect\>\|\<into\>\|\<join\>\|\<limit\>\|\<not\>\|\<on\>\|\<order\>\|\<select\>\|\<set\>\|\<update\>\|\<where\>:\U&:i
 endfunction
+
+augroup filetypedetect
+    au BufRead,BufNewFile *.jsx setfiletype javascript
+augroup END
 
 "ultiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
