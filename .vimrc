@@ -459,6 +459,11 @@ if has('gui_running')
     source ~/.vim/.gvimrc
 endif
 
+if !exists("g:ycm_semantic_triggers")
+    let g:ycm_semantic_triggers = {}
+endif
+let g:ycm_semantic_triggers['typescript'] = ['.']
+
 function! SQLUpperCase()
     %s:\<analyze\>\|\<and\>\|\<as\>\|\<by\>\|\<desc\>\|\<exists\>\|\<explain\>\|\<from\>\|\<group\>\|\<in\>\|\<insert\>\|\<intersect\>\|\<into\>\|\<join\>\|\<limit\>\|\<not\>\|\<on\>\|\<order\>\|\<select\>\|\<set\>\|\<update\>\|\<where\>:\U&:i
 endfunction
@@ -491,7 +496,6 @@ hi GitGutterDelete cterm=none ctermfg=160 ctermbg=bg
 hi SignColumn ctermbg=bg
 hi clear CursorLineNR
 hi CursorLineNR ctermbg=bg
-hi AleWarningSign cterm=none ctermfg=220 ctermbg=bg
 
 " make cursor box in command mode and vertical bar in insert mode
 if exists('$TMUX')

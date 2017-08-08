@@ -80,13 +80,13 @@ NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'HerringtonDarkholme/yats.vim'
 NeoBundle 'Quramy/vim-js-pretty-template'
-NeoBundle 'Quramy/tsuquyomi'
+" NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build' : {
-     \     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-     \     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+     \     'mac' : './install.sh --clang-completer --system-libclang',
+     \     'unix' : './install.sh --clang-completer --system-libclang',
+     \     'windows' : './install.sh --clang-completer --system-libclang',
+     \     'cygwin' : './install.sh --clang-completer --system-libclang'
      \    }
      \ }
 
