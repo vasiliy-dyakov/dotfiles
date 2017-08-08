@@ -362,7 +362,6 @@ nnoremap <silent> <leader>x :close<cr>
 nnoremap <silent> <leader>q :tabclose<cr>
 nnoremap <silent> <leader>w :w<cr>
 " reload if changed
-nnoremap <silent> <leader>r :checktime<cr>
 nnoremap <leader>f mM:Ag<space>
 nnoremap <leader>u :UndotreeToggle<cr>
 nnoremap <leader>G :Gitv<cr>
@@ -377,6 +376,9 @@ nnoremap <silent> <leader>3 :diffget //3<cr>
 nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
 " :browse oldfiles
 nnoremap <silent> <leader>O :Mru<cr>
+nnoremap <silent> <leader>d :YcmCompleter GoToDefinition<cr>
+nnoremap <silent> <leader>D :YcmCompleter GoToReferences<cr>
+nnoremap <leader>r :YcmCompleter RefactorRename 
 nnoremap <silent> <leader>l :tabmove +1<cr>
 nnoremap <silent> <leader>h :tabmove -1<cr>
 nnoremap <silent> <leader>n :lnext<cr>
