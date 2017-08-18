@@ -308,6 +308,7 @@ let g:airline_symbols.notexists = ''
 
 let g:ale_sign_error = ''
 let g:ale_sign_warning = ''
+let g:ale_linters = { 'javascript': ['flow', 'eslint'] }
 
 let g:gitgutter_enabled = 1
 let g:gitgutter_diff_args = '-w'
@@ -376,9 +377,8 @@ nnoremap <silent> <leader>3 :diffget //3<cr>
 nnoremap <silent> <leader>o :<C-u>Unite -auto-resize -buffer-name=buffers buffer<cr>
 " :browse oldfiles
 nnoremap <silent> <leader>O :Mru<cr>
-nnoremap <silent> <leader>d :YcmCompleter GoToDefinition<cr>
-nnoremap <silent> <leader>D :YcmCompleter GoToReferences<cr>
-nnoremap <leader>r :YcmCompleter RefactorRename 
+nnoremap <silent> <leader>d :FlowJumpToDef<cr>
+nnoremap <silent> <leader>D :FlowType<cr>
 nnoremap <silent> <leader>l :tabmove +1<cr>
 nnoremap <silent> <leader>h :tabmove -1<cr>
 nnoremap <silent> <leader>n :lnext<cr>
@@ -467,6 +467,21 @@ if !exists("g:ycm_semantic_triggers")
 endif
 let g:ycm_semantic_triggers['typescript'] = ['.']
 
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+"ultiSnips
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsEditSplit="vertical"
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+let g:flow#enable = 0
+
 function! SQLUpperCase()
     %s:\<analyze\>\|\<and\>\|\<as\>\|\<by\>\|\<desc\>\|\<exists\>\|\<explain\>\|\<from\>\|\<group\>\|\<in\>\|\<insert\>\|\<intersect\>\|\<into\>\|\<join\>\|\<limit\>\|\<not\>\|\<on\>\|\<order\>\|\<select\>\|\<set\>\|\<update\>\|\<where\>:\U&:i
 endfunction
@@ -475,12 +490,6 @@ augroup filetypedetect
     au BufRead,BufNewFile *.jsx setfiletype javascript
 augroup END
 
-"ultiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-k>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-let g:UltiSnipsEditSplit="vertical"
 
 hi EndOfBuffer cterm=none ctermfg=bg
 hi TabLineFill cterm=none ctermfg=white ctermbg=16

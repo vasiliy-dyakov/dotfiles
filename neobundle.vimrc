@@ -33,6 +33,7 @@ NeoBundleLazy 'gregsexton/gitv', {'depends':['tpope/vim-fugitive'],
             \ 'autoload':{'commands':'Gitv'}}
 NeoBundle 'airblade/vim-gitgutter'
 
+NeoBundle 'ervandew/supertab'
 " snippets
 NeoBundle 'sirver/ultisnips'
 
@@ -49,7 +50,7 @@ NeoBundle 'yegappan/mru' "history files
 NeoBundle 'w0rp/ale'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'jpalardy/vim-slime'
+" NeoBundle 'jpalardy/vim-slime'
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'scrooloose/nerdtree'
 " NeoBundle 'jistr/vim-nerdtree-tabs'
@@ -78,16 +79,20 @@ NeoBundle 'gregsexton/MatchTag'
 NeoBundle 'hail2u/vim-css3-syntax'
 NeoBundle 'uguu-org/vim-matrix-screensaver'
 
+NeoBundleLazy 'flowtype/vim-flow', {
+            \ 'autoload': {
+            \     'filetypes': 'javascript'
+            \ }}
 NeoBundle 'leafgarland/typescript-vim'
 NeoBundle 'HerringtonDarkholme/yats.vim'
 NeoBundle 'Quramy/vim-js-pretty-template'
 " NeoBundle 'Quramy/tsuquyomi'
 NeoBundle 'Valloric/YouCompleteMe', {
      \ 'build' : {
-     \     'mac' : './install.sh --tern-completer',
-     \     'unix' : './install.sh --tern-completer',
-     \     'windows' : './install.sh --tern-completer',
-     \     'cygwin' : './install.sh --tern-completer'
+     \     'mac' : './install.sh',
+     \     'unix' : './install.sh',
+     \     'windows' : './install.sh',
+     \     'cygwin' : './install.sh'
      \    }
      \ }
 
